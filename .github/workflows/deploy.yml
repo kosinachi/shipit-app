@@ -24,7 +24,7 @@ jobs:
 
       - name: Build and push the image
         run: |
-          IMAGE=ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/shipit-app:${GITHUB_SHA::7}
+          IMAGE=ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/shipit-app-ci:${GITHUB_SHA::7}
           docker build -t "$IMAGE" .
           docker push "$IMAGE"
           echo "IMAGE=$IMAGE" >> "$GITHUB_ENV"
